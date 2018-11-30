@@ -2,6 +2,6 @@ const path = require("path");
 
 module.exports = function (app) {
     app.get("/api/friends", function(req, res){
-        res.send("api is working");
+        res.sendFile(path.join(__dirname, "../data/friends.js"));
     });
 }
