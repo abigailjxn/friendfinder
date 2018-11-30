@@ -10,12 +10,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 
 // require route paths
-// require("./app/routing/apiRoutes");
+require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
-
-// app.get("/survey", function(req, res){
-//     res.send("working");
-// });
 
 
 // set up listener
