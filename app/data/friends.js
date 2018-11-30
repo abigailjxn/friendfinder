@@ -1,4 +1,5 @@
-{
-    name: "abigail";
-    age: "1"
-}
+let friendsArr = [
+
+]
+
+module.exports = friendsArr;
