@@ -1,0 +1,23 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "the power of friendship in survey, user-matching form",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abigailjxn/friendfinder.git"
+  },
+  "author": "Abigail Jackson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abigailjxn/friendfinder/issues"
+  },
+  "homepage": "https://github.com/abigailjxn/friendfinder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
