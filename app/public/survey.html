@@ -46,15 +46,15 @@
         <div class="uk-margin">
                 <div class="uk-form-label">Q2</div>
                 <div id="q2" class="uk-form-controls">
-                  <label><input class="uk-radio" type="radio" name="radio2" value="1"/> Option 01</label><br/>
-                  <label><input class="uk-radio" type="radio" name="radio2" value="2"/> Option 02</label>
+                  <label><input class="uk-radio" type="radio" name="q2" value="1"/> Option 01</label><br/>
+                  <label><input class="uk-radio" type="radio" name="q2" value="2"/> Option 02</label>
                 </div>
         </div>
         <div class="uk-margin">
                 <div class="uk-form-label">Q3</div>
                 <div id="q3" class="uk-form-controls">
-                  <label><input class="uk-radio" type="radio" name="radio3" value="1"/> Option 01</label><br/>
-                  <label><input class="uk-radio" type="radio" name="radio3" value="2"/> Option 02</label>
+                  <label><input class="uk-radio" type="radio" name="q3" value="1"/> Option 01</label><br/>
+                  <label><input class="uk-radio" type="radio" name="q3" value="2"/> Option 02</label>
                 </div>
         </div>
         <!-- <div class="uk-margin">
@@ -123,12 +123,17 @@
              name: $("#name").val().trim(),
              photo: $("#photo").val().trim(),
              scores: [
-                $('input[name=radio1]:checked').val(),
-                $('input[name=radio2]:checked').val(),
-                $("#q3").val().trim(),
+                $('input[name=q1]:checked').val(),
+                $('input[name=q2]:checked').val(),
+                $('input[name=q3]:checked').val(),
+               
             ]
          }
          console.log(newFriend);
+
+         $.post("/api/friends", newFriend, function(data){
+             console.log("friends!");
+         });
      })
     </script>
   </body>
