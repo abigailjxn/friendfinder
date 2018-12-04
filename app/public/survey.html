@@ -25,30 +25,39 @@
          
         <div>
           <div class="uk-form-label">Name (required)</div>
-          <input class="uk-input" type="text" placeholder="Name">
+          <input id="name" class="uk-input" type="text" placeholder="Name">
         </div>
         <div>
           <div class="uk-form-label">Photo (required)</div>
-          <input class="uk-input" type="text" placeholder="Link to Photo">
+          <input id="photo" class="uk-input" type="text" placeholder="Link to Photo">
         </div>
     <!-- </div> -->
 
     <div class="uk-container uk-flex-center uk-width-1-1" uk grid>
         <div class="uk-margin">
             <div class="uk-form-label">Q1</div>
-            <div class="uk-form-controls">
-              <label><input class="uk-radio" type="radio" name="radio1"/> Option 01</label><br/>
-              <label><input class="uk-radio" type="radio" name="radio1"/> Option 02</label>
+            <div  class="uk-form-controls">
+            <div class="uk-button-group" data-uk-button-radio>
+              <label><input  class="uk-radio" type="radio" name="q1" value="1"/> Option 01</label><br/>
+              <label><input class="uk-radio" type="radio" name="q1" value="2"/> Option 02</label>
             </div>
+        </div>
         </div>
         <div class="uk-margin">
                 <div class="uk-form-label">Q2</div>
-                <div class="uk-form-controls">
-                  <label><input class="uk-radio" type="radio" name="radio1"/> Option 01</label><br/>
-                  <label><input class="uk-radio" type="radio" name="radio1"/> Option 02</label>
+                <div id="q2" class="uk-form-controls">
+                  <label><input class="uk-radio" type="radio" name="radio2" value="1"/> Option 01</label><br/>
+                  <label><input class="uk-radio" type="radio" name="radio2" value="2"/> Option 02</label>
                 </div>
         </div>
         <div class="uk-margin">
+                <div class="uk-form-label">Q3</div>
+                <div id="q3" class="uk-form-controls">
+                  <label><input class="uk-radio" type="radio" name="radio3" value="1"/> Option 01</label><br/>
+                  <label><input class="uk-radio" type="radio" name="radio3" value="2"/> Option 02</label>
+                </div>
+        </div>
+        <!-- <div class="uk-margin">
                 <div class="uk-form-label">Q1</div>
                 <div class="uk-form-controls">
                   <label><input class="uk-radio" type="radio" name="radio1"/> Option 01</label><br/>
@@ -96,27 +105,31 @@
                   <label><input class="uk-radio" type="radio" name="radio1"/> Option 01</label><br/>
                   <label><input class="uk-radio" type="radio" name="radio1"/> Option 02</label>
                 </div>
-        </div>
-        <div class="uk-margin">
-                <div class="uk-form-label">Q1</div>
-                <div class="uk-form-controls">
-                  <label><input class="uk-radio" type="radio" name="radio1"/> Option 01</label><br/>
-                  <label><input class="uk-radio" type="radio" name="radio1"/> Option 02</label>
-                </div>
-        </div>
+        </div> -->
       </div>
+      <a ><button id="submit">Submit</button></a>
       </form>
     </div>
 
+    <!-- LINK TO JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- LINK TO UI KIT JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.24/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.24/js/uikit-icons.min.js"></script>
     <script>
-      let newFriend = {
-        name: "Usagi",
-        photo: "school photo",
-        scores: []
-      };
+     $("#submit").on("click", function(event){
+         event.preventDefault();
+         let newFriend = {
+             name: $("#name").val().trim(),
+             photo: $("#photo").val().trim(),
+             scores: [
+                $('input[name=radio1]:checked').val(),
+                $('input[name=radio2]:checked').val(),
+                $("#q3").val().trim(),
+            ]
+         }
+         console.log(newFriend);
+     })
     </script>
   </body>
 </html>
