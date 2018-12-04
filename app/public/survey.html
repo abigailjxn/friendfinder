@@ -123,9 +123,9 @@
              name: $("#name").val().trim(),
              photo: $("#photo").val().trim(),
              scores: [
-                $('input[name=q1]:checked').val(),
-                $('input[name=q2]:checked').val(),
-                $('input[name=q3]:checked').val(),
+                +$('input[name=q1]:checked').val(),
+                +$('input[name=q2]:checked').val(),
+                +$('input[name=q3]:checked').val(),
                
             ]
          }
