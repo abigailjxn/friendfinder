@@ -7,14 +7,17 @@ module.exports = function (app) {
 
     app.post("/api/friends", function(req, res) {
         //push user input to friends API
-        friendsData.push(req.body);
+      
 
         // match user with most compatible friend in API
         let userScores = req.body.scores;
+        console.log(userScores);
         // Go through each friend object in API array and reduce to one object, the friendMatch 
         let friendMatch = friendsData.reduce((ACC, CURR) => {
             // Within each friend object, go through each scores property and return one absolute value that reflects the sum of their score differences
             let scoresCompatibility = userScores.reduce((acc, curr, idx) => 
+                // let integer = parseFloat(CURR.scores[idx]);
+                // console.log(CURR.scores[idx]);
                 acc + Math.abs(curr - CURR.scores[idx]), 0);
                 
             if (scoresCompatibility < ACC.scoresCompatibility) {
@@ -25,6 +28,7 @@ module.exports = function (app) {
             } else return ACC;
         }, {scoresCompatibility: Infinity});
         
+        friendsData.push(req.body);
         res.json(friendMatch);
 
     });
