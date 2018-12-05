@@ -119,6 +119,7 @@
     <script>
      $("#submit").on("click", function(event){
          event.preventDefault();
+        
          let newFriend = {
              name: $("#name").val().trim(),
              photo: $("#photo").val().trim(),
@@ -133,6 +134,7 @@
 
          $.post("/api/friends", newFriend, function(data){
              console.log("friends!");
+             console.log(data);
          });
      })
     </script>
