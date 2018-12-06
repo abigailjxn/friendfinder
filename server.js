@@ -3,7 +3,7 @@ const express = require("express");
 // call express
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static("./app/public"));
 
 // define port
 const PORT = process.env.PORT || 8080;
