@@ -137,11 +137,27 @@
                   <label><input class="uk-radio" type="radio" name="q10" value="5"/> 5 (Strongly Agree)</label>
                 </div>
         </div>
-        <a ><button id="submit" class="uk-button uk-button-secondary">Submit</button></a>
+        <!-- SUBMIT BUTTON -->
+        <a ><button id="submit" class="uk-button uk-button-secondary" style="margin-bottom: 2em" uk-toggle="target: #friendmatch-modal">Submit</button></a>
+        <!-- RETURN TO HOME -->
+        <a href="./home.html"><button style="margin-bottom: 2em" class="uk-button uk-button-default" type="button">Return</button></a>
       </div>
      
       </form>
     </div>
+
+    <!-- MODAL -->
+    <div id="friendmatch-modal" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body uk-text-center">
+                <h2 class="uk-modal-title">Your Match is: <div id="modal-name">Name</div></h2>
+                <img id="modal-photo">
+                <p>Say hi to your new friend! </p>
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+                    <a href="./home.html"><button class="uk-button uk-button-secondary" type="button">Return</button></a>
+                </p>
+            </div>
+        </div>
 
     <!-- LINK TO JQUERY -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -159,14 +175,24 @@
                 +$('input[name=q1]:checked').val(),
                 +$('input[name=q2]:checked').val(),
                 +$('input[name=q3]:checked').val(),
+                +$('input[name=q4]:checked').val(),
+                +$('input[name=q5]:checked').val(),
+                +$('input[name=q6]:checked').val(),
+                +$('input[name=q7]:checked').val(),
+                +$('input[name=q8]:checked').val(),
+                +$('input[name=q9]:checked').val(),
+                +$('input[name=q10]:checked').val(),
                
             ]
          }
          console.log(newFriend);
 
          $.post("/api/friends", newFriend, function(data){
-             console.log("friends!");
-             console.log(newFriend);
+             let matchName = data.friendMatch.name;
+             let matchPhoto = data.friendMatch.photo;
+             $("#modal-name").text(matchName);
+             $("#modal-photo").attr("src", matchPhoto);
+           
              console.log(data);
          });
      })
