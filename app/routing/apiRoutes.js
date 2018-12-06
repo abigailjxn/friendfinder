@@ -16,8 +16,7 @@ module.exports = function (app) {
         let friendMatch = friendsData.reduce((ACC, CURR) => {
             // Within each friend object, go through each scores property and return one absolute value that reflects the sum of their score differences
             let scoresCompatibility = userScores.reduce((acc, curr, idx) => 
-                // let integer = parseFloat(CURR.scores[idx]);
-                // console.log(CURR.scores[idx]);
+               
                 acc + Math.abs(curr - CURR.scores[idx]), 0);
                 
             if (scoresCompatibility < ACC.scoresCompatibility) {

@@ -9,43 +9,46 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.24/css/uikit.min.css"
     />
-    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Survey</title>
   </head>
 
 
   <body>
+        <div class="uk-width-1-1">
+            <div class="uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-position-relative" data-src="../../assets/onepiece.jpg" uk-img>
+                <h1 class="uk-heading-primary uk-text-center" style="margin-top: .5em">The Power of Friendship</h1>
+            </div>
+        </div>
+
+    <hr class="uk-divider-icon">
+
     <div class="uk-container uk-width-1-1 uk-flex-center" uk-grid>
        
-        <div class="uk-width-1-1">
-            <h1 class="uk-heading-primary uk-text-center">The Power of Friendship</h1>
-        </div>
-       
         <form class="uk-grid-large uk-child-width-expand@s uk-flex-center uk-text-center" uk-grid>
-         
-        <div>
-          <div class="uk-form-label">Name (required)</div>
-          <input id="name" class="uk-input" type="text" placeholder="Name">
-        </div>
-        <div>
-          <div class="uk-form-label">Photo (required)</div>
-          <input id="photo" class="uk-input" type="text" placeholder="Link to Photo">
-        </div>
-    <!-- </div> -->
 
+           <div>
+                <div class="uk-form-label">Name (required)</div>
+                <input id="name" class="uk-input" type="text" placeholder="Name">
+            </div>
+                <div>
+                <div class="uk-form-label">Photo (required)</div>
+                <input id="photo" class="uk-input" type="text" placeholder="Link to Photo">
+                </div>
+       
     <div class="uk-container uk-flex-center uk-width-1-1" uk grid>
         <div class="uk-margin">
             <div class="uk-form-label">Q1</div>
-            <div  class="uk-form-controls">
-            <div class="uk-button-group" data-uk-button-radio>
+            <div  class="uk-form-controls uk-button-group uk-grid-small" data-uk-button-radio>
+            <!-- <div class="uk-button-group" data-uk-button-radio> -->
               <label><input  class="uk-radio" type="radio" name="q1" value="1"/> Option 01</label><br/>
               <label><input class="uk-radio" type="radio" name="q1" value="2"/> Option 02</label>
-            </div>
+            <!-- </div> -->
         </div>
         </div>
         <div class="uk-margin">
                 <div class="uk-form-label">Q2</div>
-                <div id="q2" class="uk-form-controls">
+                <div id="q2" class="uk-form-controls uk-button-group uk-grid-small" data-uk-button-radio>
                   <label><input class="uk-radio" type="radio" name="q2" value="1"/> Option 01</label><br/>
                   <label><input class="uk-radio" type="radio" name="q2" value="2"/> Option 02</label>
                 </div>
@@ -57,13 +60,6 @@
                   <label><input class="uk-radio" type="radio" name="q3" value="2"/> Option 02</label>
                 </div>
         </div>
-        <!-- <div class="uk-margin">
-                <div class="uk-form-label">Q1</div>
-                <div class="uk-form-controls">
-                  <label><input class="uk-radio" type="radio" name="radio1"/> Option 01</label><br/>
-                  <label><input class="uk-radio" type="radio" name="radio1"/> Option 02</label>
-                </div>
-        </div>
         <div class="uk-margin">
                 <div class="uk-form-label">Q1</div>
                 <div class="uk-form-controls">
@@ -105,9 +101,17 @@
                   <label><input class="uk-radio" type="radio" name="radio1"/> Option 01</label><br/>
                   <label><input class="uk-radio" type="radio" name="radio1"/> Option 02</label>
                 </div>
-        </div> -->
+        </div>
+        <div class="uk-margin">
+                <div class="uk-form-label">Q1</div>
+                <div class="uk-form-controls">
+                  <label><input class="uk-radio" type="radio" name="radio1"/> Option 01</label><br/>
+                  <label><input class="uk-radio" type="radio" name="radio1"/> Option 02</label>
+                </div>
+        </div>
+        <a ><button id="submit" class="uk-button uk-button-secondary">Submit</button></a>
       </div>
-      <a ><button id="submit">Submit</button></a>
+     
       </form>
     </div>
 
